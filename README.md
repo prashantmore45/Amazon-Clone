@@ -15,5 +15,8 @@ This project replicates the layout, navigation bar, product grid, and footer of 
 - HTML5
 - CSS3
 
+# 🚀 Daily Progress Log
 
+Committed to learning, building, and improving every single day.  
+Every small step counts towards something big. 🌱
 
