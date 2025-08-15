@@ -73,10 +73,10 @@
 
             </div>
 
-            <div class="nav-cart border">
+            <div class="nav-cart border" onclick="window.location.href='cart.html'">
 
                 <i class="fa-solid fa-cart-shopping"></i>
-                Cart
+                Cart(0)
 
             </div>
             
@@ -107,7 +107,7 @@
 
 
     </header>
-
+    <main>
     <div class="hero-img">
 
         <div class="hero-text">
@@ -118,112 +118,174 @@
 
     </div>
 
+    <!-- Filters Section -->
+    <!-- <div class="filters">
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="fashion">Fashion</option>
+            <option value="electronics">Electronics</option>
+            <option value="beauty">Beauty</option>
+        </select>
+        <select id="priceFilter">
+            <option value="all">All Prices</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+        </select>
+    </div> -->
+
     <div class="shop">
 
-        <div class="box">
+        <div class="box" data-name="fashion" data-id="1">
 
             <div class="box-content">
 
-                <h2 class="head">Fashion trends you like</h2>
-
-                <div class="box-img" style="background-image: url(box1_image.jpg);"></div>
+                <h2 class="head">
+                    <a href="product.html?id=1">Fashion trends you like</a>
+                </h2>
+                <a href="product.html?id=1">
+                    <div class="box-img" style="background-image: url(box1_image.jpg);"></div>
+                </a>
 
                 <p class="para" style="color: #007185;">see more</p>
+
+                <button class="add-to-cart" data-id="1">Add to Cart</button>
 
             </div>
 
         </div>
-        <div class="box">
+        <div class="box" data-name="shaving">
             <div class="box-content">
 
-                <h2 class="head">Shaving Essentials for men</h2>
+                <h2 class="head">
+                    <a href="product.html?id=2">Shaving Essentials for men </a>
+                </h2>
 
-                <div class="box-img" style="background-image: url(box2_image.jpg);"></div>
+                <a href="product.html?id=2"href="">
+                    <div class="box-img" style="background-image: url(box2_image.jpg);"></div>
+                </a>
 
                 <p class="para" style="color: #007185;">see more</p>
+
+                <button class="add-to-cart" data-id="2">Add to Cart</button>
 
             </div>
         </div>
 
-        <div class="box">
+        <div class="box" data-name="home">
              <div class="box-content">
 
-                <h2 class="head">Easy updates for elevated spaces</h2>
+                <h2 class="head">
+                    <a href="product.html?id=3">Easy updates for elevated spaces</a>
+                </h2>
 
-                <div class="box-img" style="background-image: url(box3_image.jpg);"></div>
+                <a href="product.html?id=3">
+                    <div class="box-img" style="background-image: url(box3_image.jpg);"></div>
+                </a>
 
                 <p class="para" style="color: #007185;">see more</p>
+
+                <button class="add-to-cart" data-id="3">Add to Cart</button>
 
             </div>
         </div>
 
-        <div class="box">
+        <div class="box" data-name="wireless">
              <div class="box-content">
 
-                <h2 class="head">Wireless Tech</h2>
+                <h2 class="head">
+                    <a href="product.html?id=4">Wireless Tech</a>
+                </h2>
 
-                <div class="box-img" style="background-image: url(box4_image.jpg);"></div>
+                <a href="product.html?id=4">
+                    <div class="box-img" style="background-image: url(box4_image.jpg);"></div>
+                </a>
 
                 <p class="para" style="color: #007185;">see more</p>
+
+                <button class="add-to-cart" data-id="4">Add to Cart</button>
 
             </div>
         </div>
 
-        <div class="box">
+        <div class="box" data-name="beauty">
              <div class="box-content">
 
-                <h2 class="head">Level up your beauty routine</h2>
+                <h2 class="head">
+                    <a href="product.html?id=5">Level up your beauty routine</a>
+                </h2>
 
-                <div class="box-img" style="background-image: url(box5_image.jpg);"></div>
+                <a href="product.html?id=5">
+                    <div class="box-img" style="background-image: url(box5_image.jpg);"></div>
+                </a>
 
                 <p class="para" style="color: #007185;">see more</p>
+
+                <button class="add-to-cart" data-id="5">Add to Cart</button>
 
             </div>
         </div>
 
-        <div class="box">
+        <div class="box" data-name="animal">
              <div class="box-content">
 
-                <h2 class="head">Animal lover</h2>
+                <h2 class="head">
+                    <a href="product.html?id=6">Animal lover</a>
+                </h2>
 
-                <div class="box-img" style="background-image: url(box6_image.jpg);"></div>
+                <a href="product.html?id=6">
+                    <div class="box-img" style="background-image: url(box6_image.jpg);"></div>
+                </a>
 
                 <p class="para" style="color: #007185;">see more</p>
+
+                <button class="add-to-cart" data-id="6">Add to Cart</button>
 
             </div>
         </div>
 
-        <div class="box">
+        <div class="box" data-name="toys">
 
              <div class="box-content">
 
-                <h2 class="head">Toys for all ages</h2>
+                <h2 class="head">
+                    <a href="product.html?id=7">Toys for all ages</a>
+                </h2>
 
-                <div class="box-img" style="background-image: url(box7_image.jpg);"></div>
+                <a href="product.html?id=7">
+                    <div class="box-img" style="background-image: url(box7_image.jpg);"></div>
+                </a>
 
                 <p class="para" style="color: #007185;">see more</p>
+
+                <button class="add-to-cart" data-id="7">Add to Cart</button>
 
             </div>
 
         </div>
 
-        <div class="box">
+        <div class="box" data-name="fashion1">
 
             <div class="box-content">
 
-                <h2 class="head">Shop Fashion for less</h2>
+                <h2 class="head">
+                    <a href="product.html?id=8">Shop Fashion for less</a>
+                </h2>
 
-                <div class="box-img" style="background-image: url(box8_image.jpg);"></div>
+                <a href="product.html?id=8">
+                    <div class="box-img" style="background-image: url(box8_image.jpg);"></div>
+                </a>
 
                 <p  class="para" style="color: #007185;">see more</p>
 
+                <button class="add-to-cart" data-id="8">Add to Cart</button>
+                
+
             </div>
             
-        </div>
-
-        
+        </div>   
 
     </div>
+    </main>
 
     <footer>
 
@@ -239,8 +301,8 @@
 
     </footer>
 
-
-
+    
+    <script src="script.js"></script>
     
 </body>
 </html>

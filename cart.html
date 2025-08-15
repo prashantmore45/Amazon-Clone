@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Your Shopping Cart</h1>
+    <div id="cart-items"></div>
+    <button id="clear-cart">Clear Cart</button>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartItemsContainer = document.getElementById("cart-items");
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+        } else {
+            cart.forEach((id, index) => {
+                let div = document.createElement("div");
+                div.textContent = `Product ID: ${id}`;
+                let removeBtn = document.createElement("button");
+                removeBtn.textContent = "Remove";
+                removeBtn.onclick = () => {
+                    cart.splice(index, 1);
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    location.reload();
+                };
+                div.appendChild(removeBtn);
+                cartItemsContainer.appendChild(div);
+            });
+        }
+
+        document.getElementById("clear-cart").onclick = () => {
+            localStorage.removeItem("cart");
+            location.reload();
+        };
+    </script>
+</body>
+</html>
