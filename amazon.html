@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazon</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
@@ -73,11 +73,8 @@
 
             </div>
 
-            <div class="nav-cart border" onclick="window.location.href='cart.html'">
-
-                <i class="fa-solid fa-cart-shopping"></i>
-                Cart(0)
-
+            <div class="nav-cart border" onclick="window.location.href='checkout.html'">
+                <i class="fa-solid fa-cart-shopping">0</i>
             </div>
             
 
@@ -118,176 +115,323 @@
 
     </div>
 
-    <div class="shop">
+    <div class="shop js-shop">
 
-        <!-- <div class="box" data-name="fashion" data-id="1">
-
+        <div class="box" data-name="fashion" data-id="1">
             <div class="box-content">
-
-                <h2 class="head">
-                    <a href="product.html?id=1">Fashion trends you like</a>
-                </h2>
-                <a href="product.html?id=1">
-                    <div class="box-img" style="background-image: url(box1_image.jpg);"></div>
-                </a>
-
-                <p class="para" style="color: #007185;">see more</p>
-
-                <button class="add-to-cart" data-id="1">Add to Cart</button>
-
+                <div class="box-name">Fashion trends you like</div>
+                <div class="box-img">
+                    <img src="images/box1_image.jpg" alt="Fashion trends you like">
+                </div>
+                <div class="box-rating">
+                    <img class="box-rating-stars" src="ratings/ratings/rating-40.png" alt="4 stars">
+                    <div class="box-rating-count">1200</div>
+                </div>
+                <div class="box-price">
+                    <span class="price-symbol">₹</span>
+                    <span class="price-value">999</span>
+                </div>
+                <div class="box-quantity">
+                    <select>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button class="add-to-cart js-add-to-cart" data-product-id="1">Add to Cart</button>
             </div>
-
         </div>
-        <div class="box" data-name="shaving">
+
+        <div class="box" data-name="shaving" data-id="2">
             <div class="box-content">
-
-                <h2 class="head">
-                    <a href="product.html?id=2">Shaving Essentials for men </a>
-                </h2>
-
-                <a href="product.html?id=2"href="">
-                    <div class="box-img" style="background-image: url(box2_image.jpg);"></div>
-                </a>
-
-                <p class="para" style="color: #007185;">see more</p>
-
-                <button class="add-to-cart" data-id="2">Add to Cart</button>
-
+                <div class="box-name">Shaving Essentials for men</div>
+                <div class="box-img">
+                    <img src="images/box2_image.jpg" alt="Shaving Essentials for men">
+                </div>
+                <div class="box-rating">
+                    <img class="box-rating-stars" src="ratings/ratings/rating-35.png" alt="3.5 stars">
+                    <div class="box-rating-count">850</div>
+                </div>
+                <div class="box-price">
+                    <span class="price-symbol">₹</span>
+                    <span class="price-value">499</span>
+                </div>
+                <div class="box-quantity">
+                    <select>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button class="add-to-cart js-add-to-cart" data-product-id="2">Add to Cart</button>
             </div>
         </div>
 
-        <div class="box" data-name="home">
-             <div class="box-content">
-
-                <h2 class="head">
-                    <a href="product.html?id=3">Easy updates for elevated spaces</a>
-                </h2>
-
-                <a href="product.html?id=3">
-                    <div class="box-img" style="background-image: url(box3_image.jpg);"></div>
-                </a>
-
-                <p class="para" style="color: #007185;">see more</p>
-
-                <button class="add-to-cart" data-id="3">Add to Cart</button>
-
-            </div>
-        </div>
-
-        <div class="box" data-name="wireless">
-             <div class="box-content">
-
-                <h2 class="head">
-                    <a href="product.html?id=4">Wireless Tech</a>
-                </h2>
-
-                <a href="product.html?id=4">
-                    <div class="box-img" style="background-image: url(box4_image.jpg);"></div>
-                </a>
-
-                <p class="para" style="color: #007185;">see more</p>
-
-                <button class="add-to-cart" data-id="4">Add to Cart</button>
-
-            </div>
-        </div>
-
-        <div class="box" data-name="beauty">
-             <div class="box-content">
-
-                <h2 class="head">
-                    <a href="product.html?id=5">Level up your beauty routine</a>
-                </h2>
-
-                <a href="product.html?id=5">
-                    <div class="box-img" style="background-image: url(box5_image.jpg);"></div>
-                </a>
-
-                <p class="para" style="color: #007185;">see more</p>
-
-                <button class="add-to-cart" data-id="5">Add to Cart</button>
-
-            </div>
-        </div>
-
-        <div class="box" data-name="animal">
-             <div class="box-content">
-
-                <h2 class="head">
-                    <a href="product.html?id=6">Animal lover</a>
-                </h2>
-
-                <a href="product.html?id=6">
-                    <div class="box-img" style="background-image: url(box6_image.jpg);"></div>
-                </a>
-
-                <p class="para" style="color: #007185;">see more</p>
-
-                <button class="add-to-cart" data-id="6">Add to Cart</button>
-
-            </div>
-        </div>
-
-        <div class="box" data-name="toys">
-
-             <div class="box-content">
-
-                <h2 class="head">
-                    <a href="product.html?id=7">Toys for all ages</a>
-                </h2>
-
-                <a href="product.html?id=7">
-                    <div class="box-img" style="background-image: url(box7_image.jpg);"></div>
-                </a>
-
-                <p class="para" style="color: #007185;">see more</p>
-
-                <button class="add-to-cart" data-id="7">Add to Cart</button>
-
-            </div>
-
-        </div>
-
-        <div class="box" data-name="fashion1">
-
+        <div class="box" data-name="home" data-id="3">
             <div class="box-content">
-
-                <h2 class="head">
-                    <a href="product.html?id=8">Shop Fashion for less</a>
-                </h2>
-
-                <a href="product.html?id=8">
-                    <div class="box-img" style="background-image: url(box8_image.jpg);"></div>
-                </a>
-
-                <p  class="para" style="color: #007185;">see more</p>
-
-                <button class="add-to-cart" data-id="8">Add to Cart</button>
-                
-
+                <div class="box-name">Easy updates for elevated spaces</div>
+                <div class="box-img">
+                    <img src="images/box3_image.jpg" alt="Easy updates for elevated spaces">
+                </div>
+                <div class="box-rating">
+                    <img class="box-rating-stars" src="ratings/ratings/rating-45.png" alt="4.5 stars">
+                    <div class="box-rating-count">950</div>
+                </div>
+                <div class="box-price">
+                    <span class="price-symbol">₹</span>
+                    <span class="price-value">1299</span>
+                </div>
+                <div class="box-quantity">
+                    <select>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button class="add-to-cart js-add-to-cart" data-product-id="3">Add to Cart</button>
             </div>
-            
-        </div>    -->
+        </div>
+
+        <div class="box" data-name="wireless" data-id="4">
+            <div class="box-content">
+                <div class="box-name">Wireless Tech</div>
+                <div class="box-img">
+                    <img src="images/box4_image.jpg" alt="Wireless Tech">
+                </div>
+                <div class="box-rating">
+                    <img class="box-rating-stars" src="ratings/ratings/rating-50.png" alt="5 stars">
+                    <div class="box-rating-count">2100</div>
+                </div>
+                <div class="box-price">
+                    <span class="price-symbol">₹</span>
+                    <span class="price-value">1999</span>
+                </div>
+                <div class="box-quantity">
+                    <select>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button class="add-to-cart js-add-to-cart" data-product-id="4">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="box" data-name="beauty" data-id="5">
+            <div class="box-content">
+                <div class="box-name">Level up your beauty routine</div>
+                <div class="box-img">
+                    <img src="images/box5_image.jpg" alt="Level up your beauty routine">
+                </div>
+                <div class="box-rating">
+                    <img class="box-rating-stars" src="ratings/ratings/rating-40.png" alt="4 stars">
+                    <div class="box-rating-count">670</div>
+                </div>
+                <div class="box-price">
+                    <span class="price-symbol">₹</span>
+                    <span class="price-value">799</span>
+                </div>
+                <div class="box-quantity">
+                    <select>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button class="add-to-cart js-add-to-cart" data-product-id="5">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="box" data-name="animal" data-id="6">
+            <div class="box-content">
+                <div class="box-name">Animal lover</div>
+                <div class="box-img">
+                    <img src="images/box6_image.jpg" alt="Animal lover">
+                </div>
+                <div class="box-rating">
+                    <img class="box-rating-stars" src="ratings/ratings/rating-45.png" alt="4.5 stars">
+                    <div class="box-rating-count">430</div>
+                </div>
+                <div class="box-price">
+                    <span class="price-symbol">₹</span>
+                    <span class="price-value">599</span>
+                </div>
+                <div class="box-quantity">
+                    <select>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button class="add-to-cart js-add-to-cart" data-product-id="6">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="box" data-name="toys" data-id="7">
+            <div class="box-content">
+                <div class="box-name">Toys for all ages</div>
+                <div class="box-img">
+                    <img src="images/box7_image.jpg" alt="Toys for all ages">
+                </div>
+                <div class="box-rating">
+                    <img class="box-rating-stars" src="ratings/ratings/rating-40.png" alt="4 stars">
+                    <div class="box-rating-count">980</div>
+                </div>
+                <div class="box-price">
+                    <span class="price-symbol">₹</span>
+                    <span class="price-value">399</span>
+                </div>
+                <div class="box-quantity">
+                    <select>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button class="add-to-cart js-add-to-cart" data-product-id="7">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="box" data-name="fashion1" data-id="8">
+            <div class="box-content">
+                <div class="box-name">Shop Fashion for less</div>
+                <div class="box-img">
+                    <img src="images/box8_image.jpg" alt="Shop Fashion for less">
+                </div>
+                <div class="box-rating">
+                    <img class="box-rating-stars" src="ratings/ratings/rating-35.png" alt="3.5 stars">
+                    <div class="box-rating-count">540</div>
+                </div>
+                <div class="box-price">
+                    <span class="price-symbol">₹</span>
+                    <span class="price-value">699</span>
+                </div>
+                <div class="box-quantity">
+                    <select>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button class="add-to-cart js-add-to-cart" data-product-id="8">Add to Cart</button>
+            </div>
+        </div></div>
 
     </div>
     </main>
 
     <footer>
-
-        <div class="footer-content">
-
-            <p class="foot-border"> <a href="pravicy policy" style="text-decoration: none; color: white;">Privacy Policy </a></p>
-            <p class="foot-border"> <a href="terms of service" style="text-decoration: none; color: white;">Terms of Service </a></p>
-            <p class="foot-border"> <a href="contact us" style="text-decoration: none; color: white;">Contact Us </a></p>
-
-        </div>   
-
-        <p class="copyright">© 2025 Amazon Clone. All rights reserved.</p>
-
+        <div class="footer-backtotop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+            <i class="fa-solid fa-arrow-up" style="margin-right:8px;"></i>
+            Back to top
+        </div>
+        <div class="footer-main" style="padding: 20px 0;">
+            <div class="footer-links" style="gap: 30px;">
+                <div class="footer-col">
+                    <h4>Get to Know Us</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press Releases</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect with Us</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Make Money with Us</h4>
+                    <ul>
+                        <li><a href="#">Sell on Amazon</a></li>
+                        <li><a href="#">Become an Affiliate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Let Us Help You</h4>
+                    <ul>
+                        <li><a href="#">Your Account</a></li>
+                        <li><a href="#">Returns Centre</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-lang-currency">
+                <button class="footer-lang-btn"><i class="fa-solid fa-globe"></i> English</button>
+                <button class="footer-country-btn">India</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-links">
+                <a href="#">Conditions of Use & Sale</a>
+                <a href="#">Privacy Notice</a>
+            </div>
+            <div class="footer-bottom-copy">
+                © 2025 Amazon.in Clone.
+            </div>
+        </div>
     </footer>
 
     
-    <script src="script.js"></script>
+    <script type="module" src="scripts/amazon.js"></script>
     
 </body>
 </html>

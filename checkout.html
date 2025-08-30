@@ -1,41 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My Cart</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Your Shopping Cart</h1>
-    <div id="cart-items"></div>
-    <button id="clear-cart">Clear Cart</button>
+<html>
+  <head>
+    <title>Checkout</title>
 
-    <script>
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const cartItemsContainer = document.getElementById("cart-items");
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        if (cart.length === 0) {
-            cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
-        } else {
-            cart.forEach((id, index) => {
-                let div = document.createElement("div");
-                div.textContent = `Product ID: ${id}`;
-                let removeBtn = document.createElement("button");
-                removeBtn.textContent = "Remove";
-                removeBtn.onclick = () => {
-                    cart.splice(index, 1);
-                    localStorage.setItem("cart", JSON.stringify(cart));
-                    location.reload();
-                };
-                div.appendChild(removeBtn);
-                cartItemsContainer.appendChild(div);
-            });
-        }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/checkout.css">
 
-        document.getElementById("clear-cart").onclick = () => {
-            localStorage.removeItem("cart");
-            location.reload();
-        };
-    </script>
-</body>
+  </head>
+
+  <body>
+    <!-- Checkout Header -->
+    <div class="checkout-header">
+      <div class="header-content">
+        <div class="checkout-header-left-section">
+          <a href="amazon.html">
+            <img class="amazon-logo" src="images/amazon_logo.png" href="amazon.html">
+          </a>
+        </div>
+
+        <div class="checkout-header-middle-section">
+          Checkout (<a class="return-to-home-link"
+            href="amazon.html">2 items</a>)
+        </div>
+
+        <!-- <div class="checkout-header-right-section">
+          <img src="images/icons/checkout-lock-icon.png">
+        </div> -->
+      </div>
+    </div>
+
+    <!-- Main Checkout Section -->
+    <div class="main">
+      <div class="page-title">Review your order</div>
+
+      <div class="checkout-grid">
+        <!-- Order Summary (Products) -->
+        <div class="order-summary js-order-summary">
+          <!-- Cart Item 1 -->
+          <div class="cart-item-container">
+            <div class="delivery-date">
+              Delivery date: Tuesday, Sept 3
+            </div>
+
+            <div class="cart-item-details-grid">
+              <img class="product-image"
+                src="images/products/sample-product-1.jpg">
+
+              <div class="cart-item-details">
+                <div class="product-name">
+                  Sample Product 1
+                </div>
+                <div class="product-price">
+                  ₹599
+                </div>
+                <div class="product-quantity">
+                  <span>
+                    Quantity: <span class="quantity-label">2</span>
+                  </span>
+                  <span class="update-quantity-link link-primary">
+                    Update
+                  </span>
+                  <span class="delete-quantity-link link-primary">
+                    Delete
+                  </span>
+                </div>
+              </div>
+
+              <div class="delivery-options">
+                <div class="delivery-options-title">
+                  Choose a delivery option:
+                </div>
+                <div class="delivery-option">
+                  <input type="radio" checked
+                    class="delivery-option-input"
+                    name="delivery-option-1">
+                  <div>
+                    <div class="delivery-option-date">
+                      Tuesday, Sept 3
+                    </div>
+                    <div class="delivery-option-price">
+                      FREE Shipping
+                    </div>
+                  </div>
+                </div>
+                <div class="delivery-option">
+                  <input type="radio"
+                    class="delivery-option-input"
+                    name="delivery-option-1">
+                  <div>
+                    <div class="delivery-option-date">
+                      Monday, Sept 2
+                    </div>
+                    <div class="delivery-option-price">
+                      ₹49 - Shipping
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cart Item 2 -->
+          <div class="cart-item-container">
+            <div class="delivery-date">
+              Delivery date: Monday, Sept 2
+            </div>
+
+            <div class="cart-item-details-grid">
+              <img class="product-image"
+                src="images/products/sample-product-2.jpg">
+
+              <div class="cart-item-details">
+                <div class="product-name">
+                  Sample Product 2
+                </div>
+                <div class="product-price">
+                  ₹1,299
+                </div>
+                <div class="product-quantity">
+                  <span>
+                    Quantity: <span class="quantity-label">1</span>
+                  </span>
+                  <span class="update-quantity-link link-primary">
+                    Update
+                  </span>
+                  <span class="delete-quantity-link link-primary">
+                    Delete
+                  </span>
+                </div>
+              </div>
+
+              <div class="delivery-options">
+                <div class="delivery-options-title">
+                  Choose a delivery option:
+                </div>
+
+                <div class="delivery-option">
+                  <input type="radio" checked class="delivery-option-input"
+                    name="delivery-option-2">
+                  <div>
+                    <div class="delivery-option-date">
+                      Monday, Sept 2
+                    </div>
+                    <div class="delivery-option-price">
+                      FREE Shipping
+                    </div>
+                  </div>
+                </div>
+                <div class="delivery-option">
+                  <input type="radio" class="delivery-option-input"
+                    name="delivery-option-2">
+                  <div>
+                    <div class="delivery-option-date">
+                      Sunday, Sept 1
+                    </div>
+                    <div class="delivery-option-price">
+                      ₹99 - Shipping
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Summary -->
+        <div class="payment-summary">
+          <div class="payment-summary-title">
+            Order Summary
+          </div>
+
+          <div class="payment-summary-row">
+            <div>Items (2):</div>
+            <div class="payment-summary-money">₹2,497</div>
+          </div>
+
+          <div class="payment-summary-row">
+            <div>Shipping &amp; handling:</div>
+            <div class="payment-summary-money">₹49</div>
+          </div>
+
+          <div class="payment-summary-row subtotal-row">
+            <div>Total before tax:</div>
+            <div class="payment-summary-money">₹2,546</div>
+          </div>
+
+          <div class="payment-summary-row">
+            <div>Estimated tax (10%):</div>
+            <div class="payment-summary-money">₹255</div>
+          </div>
+
+          <div class="payment-summary-row total-row">
+            <div>Order total:</div>
+            <div class="payment-summary-money">₹2,801</div>
+          </div>
+
+          <button class="place-order-button button-primary">
+            Place your order
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="scripts/checkout.js"></script>
+  </body>
 </html>
