@@ -17,6 +17,8 @@ function saveTOLocalStorage(){
 
 export function addToCart(productId){
 
+    productId = Number(productId)
+
     let matchingItem;
 
     cart.forEach((item) => {
@@ -39,6 +41,8 @@ export function addToCart(productId){
 
 
 export function removeFromCart(productId){
+    
+    productId = Number(productId);
     const newCart = [];
 
     cart.forEach((cartItem) => {

@@ -20,7 +20,7 @@ products.forEach((product) => {
                 </div>
 
                 <div class="box-rating">
-                    <img class=box-ratinf-stars 
+                    <img class="box-rating-stars" 
                     src="ratings/ratings/rating-${product.rating.stars * 10}.png">
                     <div class="box-rating-count">
                         ${product.rating.count}
@@ -63,7 +63,7 @@ products.forEach((product) => {
 
 document.querySelector('.js-shop').innerHTML = productsHTML;
 
-function upadteCartQuantity(){
+function updateCartQuantity(){
 
     let cartQuantity = 0;
 
@@ -81,7 +81,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
 
         addToCart(productId);
 
-        upadteCartQuantity();
+        updateCartQuantity();
         
     });
 });
