@@ -1,20 +1,22 @@
-import { cart, removeFromCart} from '../data/cart.js';
+import {removeFromCart} from '../data/cart.js';
 import { products } from '../data/product.js';
 
-
+let cart = JSON.parse(localStorage.getItem('cart')) || [].map(item => ({
+  ...item,
+  productId: Number(item.productId)
+}));
 
 let cartSummaryHTML = '';
 
 cart.forEach((cartItem) => {
     const productId = cartItem.productId;
 
-    let matchingProduct;
+    let matchingProduct = products.find(product => product.id === productId);
 
-    products.forEach((product) => {
-        if (product.id === productId) {
-            matchingProduct = product;
-        }
-    });
+    if (!matchingProduct) {
+        console.warn("No matching product found for cart item:", cartItem);
+        return; 
+    }
 
     cartSummaryHTML += `
         <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
