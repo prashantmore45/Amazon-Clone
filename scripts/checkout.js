@@ -1,5 +1,5 @@
-import {cart, addToCart} from '../data/cart.js';
-import {products} from '../data/products.js';
+import { cart, removeFromCart } from '../data/cart.js';
+import { products } from '../data/product.js';
 
 
 
@@ -7,61 +7,68 @@ let productsHTML = '';
 
 products.forEach((product) => {
     productsHTML += `
-        <div class="box" >
-
-            <div class="box-content">
-
-                <div class="box-name">
-                    ${product.name}
-                </div>
-                    
-                <div class="box-img" ">
-                    <img src="${product.image}">
-                </div>
-
-                <div class="box-rating">
-                    <img class=box-ratinf-stars 
-                    src="ratings/ratings/rating-${product.rating.stars * 10}.png">
-                    <div class="box-rating-count">
-                        ${product.rating.count}
-                    </div>
-                </div>
-                <div class="box-price">
-                    <span class="price-symbol">
-                        ₹
-                    </span>
-                    <span class="price-value">
-                        ${product.price}
-                    </span>
-                </div>
-
-                <div class="box-quantity">
-                    <select>
-                        <option selected-value="1">1</option>
-                        <option selected-value="2">2</option>
-                        <option selected-value="3">3</option>
-                        <option selected-value="4">4</option>
-                        <option selected-value="5">5</option>
-                        <option selected-value="6">6</option>
-                        <option selected-value="7">7</option>
-                        <option selected-value="8">8</option>
-                        <option selected-value="9">9</option>
-                        <option selected-value="10">10</option>
-                    </select>
-                </div>
-
-
-                <button class="add-to-cart js-add-to-cart" data-product-id="${product.id}">
-                    Add to Cart
-                </button>
-
+        <div class="cart-item-container">
+            <div class="delivery-date">
+                Delivery date: Tuesday, Sept 3
             </div>
 
+            <div class="cart-item-details-grid">
+                <img class="product-image"
+                    src="${product.image}">
+
+                <div class="cart-item-details">
+                    <div class="product-name">
+                    ${product.name}
+                    </div>
+                    <div class="product-price">
+                    ₹${product.price}
+                    </div>
+                    <div class="product-quantity">
+                    <span>
+                        Quantity: <span class="quantity-label">2</span>
+                    </span>
+                    <span class="update-quantity-link link-primary">
+                        Update
+                    </span>
+                    <span class="delete-quantity-link link-primary" id="deletebtn">
+                        Delete
+                    </span>
+                    </div>
+                </div>
+
+                <div class="delivery-options">
+                    <div class="delivery-options-title">
+                        Choose a delivery option:
+                    </div>
+                    <div class="delivery-option">
+                        <input type="radio" checked class="delivery-option-input" name="delivery-option-1">
+                        <div>
+                            <div class="delivery-option-date">
+                                Tuesday, Sept 3
+                            </div>
+                            <div class="delivery-option-price">
+                                FREE Shipping
+                            </div>
+                        </div>
+                    </div>
+                    <div class="delivery-option">
+                        <input type="radio" class="delivery-option-input" name="delivery-option-1">
+                        <div>
+                            <div class="delivery-option-date">
+                                Monday, Sept 2
+                            </div>
+                            <div class="delivery-option-price">
+                                ₹49 - Shipping
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>`;
     }
 )
 
-document.querySelector('.js-shop').innerHTML = productsHTML;
+document.getElementById("orders").innerHTML = productsHTML;
 
 function upadteCartQuantity(){
 
@@ -85,3 +92,5 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
         
     });
 });
+
+
