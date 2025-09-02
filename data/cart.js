@@ -1,33 +1,22 @@
-export let cart = JSON.parse(localStorage.getItem('cart'));
+export let cart = [{
+    productId: 1,
+    quantity: 2
+}, {
+    productId: 2,
+    quantity: 1
+}];
 
-if (!cart) {
-    cart = [{
-        productId: 1,
-        quantity: 2
-        }, {
-        productId: 2,
-        quantity: 1
-    }];
-}
-
-function saveTOLocalStorage(){
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-}
-
-export function addToCart(productId){
-
-    productId = Number(productId)
-
+export function addToCart(productId) {
     let matchingItem;
 
-    cart.forEach((item) => {
-        if(item.productId === productId){
-            matchingItem = item;
+    cart.forEach((cartItem) => {
+        if (productId === cartItem.productId) {
+            matchingItem = cartItem;
+
         }
     });
 
-    if(matchingItem){
+    if (matchingItem) {
         matchingItem.quantity += 1;
     } else {
         cart.push({
@@ -35,22 +24,15 @@ export function addToCart(productId){
             quantity: 1
         });
     }
-    saveTOLocalStorage();
-
 }
 
 
-export function removeFromCart(productId){
-    
-    productId = Number(productId);
-    const newCart = [];
+export function removeFromCart(productId) {
 
-    cart.forEach((cartItem) => {
-        if (cartItem.productId !== productId) {
-            newCart.push(cartItem);
-        }
-    });
+    const index = cart.findIndex(cartItem => cartItem.productId === Number(productId));
 
-    cart = newCart;
-    saveTOLocalStorage();
+    if (index !== -1) {
+        cart.splice(index, 1);
+    }
 }
+
