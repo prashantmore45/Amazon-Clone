@@ -1,18 +1,19 @@
-export let cart = JSON.parse(localStorage.getItem('cart')).map(item => ({
+export let cart = JSON.parse(localStorage.getItem('cart') || '[]').map(item => ({
   ...item,
-  productId: Number(item.productId) // normalize to number
+  productId: Number(item.productId) 
 }));;
 
 if (!cart) {
     cart = [{
         productId: 1,
-        quantity: 2
+        quantity: 2,
+        deliveryOptionId: '1'
     }, {
         productId: 2,
-        quantity: 1
+        quantity: 1,
+        deliveryOptionId: '2'
     }];
 } else {
-    // ensure productId is always a number
     cart = cart.map(item => ({
         ...item,
         productId: Number(item.productId)
@@ -42,7 +43,8 @@ export function addToCart(productId) {
     } else {
         cart.push({
             productId: productId,
-            quantity: 1
+            quantity: 1,
+            deliveryOptionId: '1'
         });
     }
 
