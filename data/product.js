@@ -1,3 +1,20 @@
+export function getProduct(productId) {
+
+    let matchingProduct = products.find(product => product.id === productId);
+
+    if (!matchingProduct) {
+        console.warn("No matching product found for cart item:", cartItem);
+        return; 
+    }
+
+    return matchingProduct;
+}
+
+
+
+
+
+
 export const products = [
     {
         id : 1,

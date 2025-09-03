@@ -1,7 +1,7 @@
 import {removeFromCart, updateDeliveryOption} from '../data/cart.js';
-import { products } from '../data/product.js';
+import { products, getProduct } from '../data/product.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
-import { deliveryOptions } from '../data/deliveryOptions.js';
+import { deliveryOptions, getDeliveryOption } from '../data/deliveryOptions.js';
 
 
 
@@ -20,7 +20,11 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [].map(item => ({
     cart.forEach((cartItem) => {
         const productId = cartItem.productId;
 
+        
+
         let matchingProduct = products.find(product => product.id === productId);
+
+        matchingProduct = getProduct(productId);
 
         if (!matchingProduct) {
             console.warn("No matching product found for cart item:", cartItem);
@@ -29,13 +33,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [].map(item => ({
 
         const deliveryOptionId = cartItem.deliveryOptionId;
 
-        let deliveryOption;
-
-        deliveryOptions.forEach((option) => {
-            if (option.id === deliveryOptionId) {
-                deliveryOption = option;
-            }
-        });
+        const deliveryOption = getDeliveryOption(deliveryOptionId);
 
         const today = dayjs();
         const deliveryDate = today.add(
