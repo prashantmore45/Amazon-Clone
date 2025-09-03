@@ -2,11 +2,8 @@ import {removeFromCart, updateDeliveryOption} from '../data/cart.js';
 import { products, getProduct } from '../data/product.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 import { deliveryOptions, getDeliveryOption } from '../data/deliveryOptions.js';
+import { renderPaymentSummary } from './paymentSummary.js';
 
-
-
-const today = dayjs();
-const deliveryDate = today.add(7, 'days');
 
 export function renderOrderSummary() {
 
@@ -138,6 +135,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [].map(item => ({
             const container = document.querySelector(`.js-cart-item-container-${productId}`);
             
             container.remove();
+            renderPaymentSummary();
         
         });
     });
@@ -148,6 +146,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [].map(item => ({
             const {productId, deliveryOptionId} = element.dataset;
             updateDeliveryOption(productId, deliveryOptionId);
             renderOrderSummary();
+            renderPaymentSummary();
         });
     });
 }

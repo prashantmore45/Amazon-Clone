@@ -11,12 +11,12 @@ export function renderPaymentSummary() {
         const product = getProduct(cartItem.productId);
         productPrice += product.price * cartItem.quantity;
 
-        const deliveryOption = getDeliveryOption(cartItem.deliverOptionId);
+        const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
         shippingPrice += deliveryOption.price;
     });
     
     const totalBeforeTax = productPrice + shippingPrice;
-    const tax = totalBeforeTax * 0.1;
+    const tax = Math.round(totalBeforeTax * 0.1);
     const total = totalBeforeTax + tax;
 
     const paymentSummaryHTML = `
