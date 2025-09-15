@@ -10,6 +10,11 @@ This project replicates the layout, navigation bar, product grid, and footer of 
 - Product grid layout
 - Footer section similar to Amazon
 - Basic responsive design for different screen sizes
+- Responsive design similar to Amazon homepage  
+- Product listing with images  
+- Add to Cart functionality  
+- Cart preview and checkout page  
+- Simple and clean CSS styling
 
 ## 🛠️ Technologies Used
 - HTML5
@@ -20,10 +25,7 @@ This project replicates the layout, navigation bar, product grid, and footer of 
 
 Committed to learning, building, and improving every single day.  
 Every small step counts towards something big. 🌱
+  
 
-
-# 🚀 Daily Progress Log
-
-Added the javascript functionality to work properly or interactive.
 
 
