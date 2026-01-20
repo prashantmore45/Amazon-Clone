@@ -1,4 +1,4 @@
-Hi, this project is just a clone of Amazon E-commerce website.
+Hi, This project is just a clone of Amazon E-commerce website.
 
 # Amazon Clone
 
